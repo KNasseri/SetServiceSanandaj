@@ -1,0 +1,21 @@
+﻿@model SetServiceEnd.Areas.Admin.Models.DashboardViewModel
+@{
+    ViewBag.Title = "پیشخوان";
+    Layout = "~/Views/Shared/_Managers_Layout.cshtml";
+}
+<div class="col-md-6">
+    <ul>
+        <hr />
+        <li style="font-size:x-large">کاربران: @Model.UsersCount</li>
+        <hr />
+        <li style="font-size:x-large">خدمات: @Model.ServicesCount</li>
+        <hr />
+        <li style="font-size:x-large">شرکت ها: @Model.ComapniesCount</li>
+        <hr />
+    </ul>
+</div>
+<div class="col-md-6">
+    <img src="~/Content/images/2015-06-25-00-05-16--688658554.jpeg" />
+</div>
+
+

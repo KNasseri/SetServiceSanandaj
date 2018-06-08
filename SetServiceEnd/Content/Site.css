@@ -1,0 +1,48 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.sidebar{    
+    color: white;
+    height:100%;
+    padding: 20px;
+}
+
+#accordionMenu {
+  max-width: 300px;
+}
+
+.service-content{
+    padding: 10px;
+    background-color: lightgray;
+    min-height: 150px;
+    margin-bottom: 20px;
+}
+
+.service-icon{text-align: center;}
+.service-icon > img{
+    max-width:80px;
+    max-height: 80px;
+}
+.service-name{text-align: center;}
+.service-more{text-align:center;}

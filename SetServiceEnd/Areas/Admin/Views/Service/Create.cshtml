@@ -1,0 +1,56 @@
+﻿@model SetServiceEnd.Areas.Admin.Models.CreateServiceViewModel
+@{
+    ViewBag.Title = "ایجاد سرویس جدید";
+    Layout = "~/Views/Shared/_Managers_Layout.cshtml";
+}
+
+<h2>ایجاد سرویس جدید</h2>
+
+@using (Html.BeginForm("Create", "Service", new { area = "Admin" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken();
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name, new { @for = "sname" })
+                @Html.TextBoxFor(m => m.Name, new { @id = "sname" })
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Icon, new { @for = "sicon" })
+                @Html.TextBoxFor(m => m.Icon, new { @id = "sicon" })
+                @Html.ValidationMessageFor(m => m.Icon, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Url, new { @for = "surl" })
+                @Html.TextBoxFor(m => m.Url, new { @id = "surl" })
+                @Html.ValidationMessageFor(m => m.Url, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Intro, new { @for = "sintro" })
+                @Html.TextBoxFor(m => m.Intro, new { @id = "sintro" })
+                @Html.ValidationMessageFor(m => m.Intro, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Description, new { @for = "sdesc" })
+                @Html.TextAreaFor(m => m.Description, new { @id = "sdesc" })
+                @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.CompanyId, new { @for = "scompany" })
+                @Html.DropDownListFor(m => m.CompanyId, Model.Companies, new { @id = "scompany" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.CategoryId, new { @for = "scategory" })
+                @Html.DropDownListFor(m => m.CategoryId, Model.Categories, new { @id = "scategory" })
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">دخیره مشخصات</button>
+}

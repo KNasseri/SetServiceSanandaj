@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - مدیریت خدمات سنندج</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("پنل مدیریت خدمات سنندج", "Index", "Home", new { area = "Admin" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("پیشخوان", "Index", "Home", new { area = "Admin" })</li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("حساب کاربری", "Index", "Home", new { area = "Admin" })</li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("خروج", "Index", "Home")</li>
+                </ul>
+             
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <div class="panel-group" id="accordionMenu" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                &nbsp;&nbsp;کاربران سیستم
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <ul class="nav">
+                                <li><a href="@Url.Action("Index","User",new { area = "Admin" })">لیست همه</a></li>
+                                <li><a href="@Url.Action("Create","User",new { area = "Admin" })">افزودن کاربر جدید</a></li>                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                خدمات
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <ul class="nav">
+                                <li><a href="@Url.Action("Index","Service",new { area = "Admin" })">لیست همه</a></li>
+                                <li><a href="@Url.Action("Create","Service",new { area = "Admin" })">افزودن خدمت جدید</a></li>                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="container body-content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <img src="~/Content/images/2015-06-23-04-20-11-907288651.jpeg" />
+        </div>
+        <div class="col-md-4">
+            <img src="~/Content/images/2015-06-25-00-01-01--708491780.jpeg" />
+
+        </div>
+        <div class="col-md-4">
+            <img src="~/Content/images/2015-06-23-04-20-07--1867509707.jpeg" />
+
+        </div>
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year -سایت خدمات شهر سنندج</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
